@@ -1,6 +1,9 @@
 import React from "react";
+import { getAllMovies } from "../../Data/movies";
 
 export default function MovieList() {
+ const { movies } = getAllMovies();
+
  return (
   <div>
    <div className="content">
