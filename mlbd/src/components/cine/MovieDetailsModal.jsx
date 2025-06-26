@@ -20,7 +20,6 @@ export default function MovieDetailsModal({ movie, onClose }) {
         <span className="block text-base text-[#9fa0a4] dark:text-[#575A6E] my-3">
          {movie.genre}
         </span>
-        <div></div>
        </div>
        <p className="text-sm lg:text-base mb-8 lg:mb-16">{movie.description}</p>
        <div className="grid lg:grid-cols-2 gap-2">

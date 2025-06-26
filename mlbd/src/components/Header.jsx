@@ -2,10 +2,15 @@ import Logo from "../assets/logo.svg";
 import Ring from "../assets/ring.svg";
 import Moon from "../assets/icons/moon.svg";
 import Cart from "../assets/shopping-cart.svg";
+import { useState } from "react";
+import CartDetails from "./cine/CartDetails";
 
 export default function Header() {
+ const [showCart, setShowCart] = useState(true);
+
  return (
   <header>
+   {showCart && <CartDetails />}
    <nav className="container flex items-center justify-between space-x-10 py-6 mx-auto">
     <a href="index.html">
      <img src={Logo} width="139" height="26" alt="" />
