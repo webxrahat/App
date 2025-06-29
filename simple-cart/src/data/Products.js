@@ -5,7 +5,7 @@ const data = [
     image: "/img/image-1.png",
     price: "550",
     inventory: "20",
-    rating: "4.2",
+    rating: 5,
     offerPrice: "450",
   },
   {
@@ -14,7 +14,7 @@ const data = [
     image: "/img/image-2.png",
     price: "600",
     inventory: "15",
-    rating: "4.5",
+    rating: 4,
     offerPrice: null,
   },
   {
@@ -23,7 +23,7 @@ const data = [
     image: "/img/image-3.png",
     price: "700",
     inventory: "10",
-    rating: "4.0",
+    rating: 4,
     offerPrice: null,
   },
   {
@@ -32,7 +32,7 @@ const data = [
     image: "/img/image-5.png",
     price: "750",
     inventory: "25",
-    rating: "4.6",
+    rating: 2,
     offerPrice: null,
   },
   {
@@ -41,7 +41,7 @@ const data = [
     image: "/img/image-6.png",
     price: "500",
     inventory: "30",
-    rating: "3.9",
+    rating: 5,
     offerPrice: "430",
   },
   {
@@ -50,7 +50,7 @@ const data = [
     image: "/img/image-7.png",
     price: "650",
     inventory: "12",
-    rating: "4.3",
+    rating: 3,
     offerPrice: "590",
   },
   {
@@ -59,7 +59,7 @@ const data = [
     image: "/img/image-8.png",
     price: "800",
     inventory: "8",
-    rating: "4.7",
+    rating: 5,
     offerPrice: null,
   },
   {
@@ -68,7 +68,7 @@ const data = [
     image: "/img/image-9.png",
     price: "580",
     inventory: "18",
-    rating: "4.1",
+    rating: 4,
     offerPrice: "500",
   },
   {
@@ -77,7 +77,7 @@ const data = [
     image: "/img/image-10.png",
     price: "620",
     inventory: "22",
-    rating: "4.4",
+    rating: 5,
     offerPrice: null,
   },
 ];

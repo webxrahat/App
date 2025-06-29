@@ -36,11 +36,8 @@ export default function ProductsCard() {
           <div className="p-4">
             <h3 className="font-medium">{item.name}</h3>
             <div className="flex items-center justify-between">
-              <div className="flex items-center my-1">
-                <div className="flex text-yellow-400"></div>
-                <Rating value={item.rating} />
-                <span className="text-xs text-gray-500 ml-1">4/5</span>
-              </div>
+              <Rating value={item.rating} />
+
               <span className="text-xs text-gray-700">
                 ({item.inventory} pcs left)
               </span>
