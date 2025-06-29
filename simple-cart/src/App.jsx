@@ -1,5 +1,14 @@
-import React from "react";
+import Header from "./components/Header";
+import RootLayout from "./components/RootLayout";
+import Footer from "./components/Footer";
+import "./App.css";
 
 export default function App() {
-  return <div className="bg-red-50">App</div>;
+ return (
+  <>
+   <Header />
+   <RootLayout />
+   <Footer />
+  </>
+ );
 }
