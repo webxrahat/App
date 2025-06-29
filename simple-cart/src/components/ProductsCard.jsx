@@ -1,48 +1,62 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Products } from "../data/Products";
+import { ProductContext } from "../context";
+import Rating from "./Rating";
 
 export default function ProductsCard() {
- const shopItems = Products();
- console.log("shopItems", shopItems);
+  const { cartData, setCartData } = useContext(ProductContext);
 
- return (
-  <div className="product-grid">
-   {shopItems.map((item) => (
-    <div
-     key={item.id}
-     className="bg-gray-100 rounded-lg overflow-hidden transition-transform hover:scale-[1.02] duration-300"
-    >
-     <div className="h-48 bg-gray-200 flex items-center justify-center">
-      <img
-       src={item.image}
-       alt={item.name}
-       className="h-full w-auto object-cover"
-      />
-     </div>
-     <div className="p-4">
-      <h3 className="font-medium">Gradient Graphic T-shirt </h3>
-      <div className="flex items-center justify-between">
-       <div className="flex items-center my-1">
-        <div className="flex text-yellow-400">
-         <span>★</span>
-         <span>★</span>
-         <span>★</span>
-         <span>★</span>
-         <span className="text-gray-300">★</span>
+  const shopItems = Products();
+  // console.log("cartData", shopItems);
+
+  const handleAddToCart = (item) => {
+    // console.log("product item", item);
+    const found = cartData.find((data) => data.id === item.id);
+    if (!found) {
+      setCartData((pre) => [...pre, item]);
+    } else {
+      alert(" Already added");
+    }
+  };
+
+  return (
+    <div className="product-grid">
+      {shopItems.map((item) => (
+        <div
+          key={item.id}
+          className="bg-gray-100 rounded-lg overflow-hidden transition-transform hover:scale-[1.02] duration-300"
+        >
+          <div className="h-48 bg-gray-200 flex items-center justify-center">
+            <img
+              src={item.image}
+              alt={item.name}
+              className="h-full w-auto object-cover"
+            />
+          </div>
+          <div className="p-4">
+            <h3 className="font-medium">{item.name}</h3>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center my-1">
+                <div className="flex text-yellow-400"></div>
+                <Rating value={item.rating} />
+                <span className="text-xs text-gray-500 ml-1">4/5</span>
+              </div>
+              <span className="text-xs text-gray-700">
+                ({item.inventory} pcs left)
+              </span>
+            </div>
+            <p className="font-bold">$ {item.price} </p>
+            <button
+              onClick={() => handleAddToCart(item)}
+              className="bg-gray-700 w-full mt-2 py-1 text-gray-100 rounded flex items-center justify-center cursor-pointer"
+            >
+              Add to Cart
+            </button>
+          </div>
         </div>
-        <span className="text-xs text-gray-500 ml-1">4/5</span>
-       </div>
-       <span className="text-xs text-gray-700">(212 pcs left)</span>
-      </div>
-      <p className="font-bold">$145 </p>
-      <button className="bg-gray-700 w-full mt-2 py-1 text-gray-100 rounded flex items-center justify-center cursor-pointer">
-       Add to Cart
-      </button>
-     </div>
-    </div>
-   ))}
+      ))}
 
-   <div className="bg-gray-100 rounded-lg overflow-hidden transition-transform hover:scale-[1.02] duration-300">
+      {/* <div className="bg-gray-100 rounded-lg overflow-hidden transition-transform hover:scale-[1.02] duration-300">
     <div className="h-48 bg-gray-200 flex items-center justify-center">
      <img
       src="./assets/img/image 10-1.png"
@@ -103,7 +117,7 @@ export default function ProductsCard() {
       Remove from Cart
      </button>
     </div>
-   </div>
-  </div>
- );
+   </div> */}
+    </div>
+  );
 }
