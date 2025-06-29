@@ -1,13 +1,15 @@
 const data = [
  {
+  id: crypto.randomUUID(),
   name: "Classic Cotton Tee",
-  image: "https://example.com/images/tshirt1.jpg",
+  image: "/img/image-1.png",
   price: "550",
   inventory: "20",
   rating: "4.2",
   offerPrice: "450",
  },
  {
+  id: crypto.randomUUID(),
   name: "Vintage Logo Shirt",
   image: "https://example.com/images/tshirt2.jpg",
   price: "600",
@@ -16,6 +18,7 @@ const data = [
   offerPrice: null,
  },
  {
+  id: crypto.randomUUID(),
   name: "Graphic Print Tee",
   image: "https://example.com/images/tshirt3.jpg",
   price: "700",
@@ -24,6 +27,7 @@ const data = [
   offerPrice: null,
  },
  {
+  id: crypto.randomUUID(),
   name: "Oversized Streetwear Tee",
   image: "https://example.com/images/tshirt4.jpg",
   price: "750",
@@ -32,6 +36,7 @@ const data = [
   offerPrice: null,
  },
  {
+  id: crypto.randomUUID(),
   name: "Minimalist White Tee",
   image: "https://example.com/images/tshirt5.jpg",
   price: "500",
@@ -40,6 +45,7 @@ const data = [
   offerPrice: "430",
  },
  {
+  id: crypto.randomUUID(),
   name: "Retro Colorblock Tee",
   image: "https://example.com/images/tshirt6.jpg",
   price: "650",
@@ -48,6 +54,7 @@ const data = [
   offerPrice: "590",
  },
  {
+  id: crypto.randomUUID(),
   name: "Tie-Dye Vibes Tee",
   image: "https://example.com/images/tshirt7.jpg",
   price: "800",
@@ -56,6 +63,7 @@ const data = [
   offerPrice: null,
  },
  {
+  id: crypto.randomUUID(),
   name: "Slim Fit Crew Neck",
   image: "https://example.com/images/tshirt8.jpg",
   price: "580",
@@ -64,19 +72,12 @@ const data = [
   offerPrice: "500",
  },
  {
+  id: crypto.randomUUID(),
   name: "Bold Statement Tee",
   image: "https://example.com/images/tshirt9.jpg",
   price: "620",
   inventory: "22",
   rating: "4.4",
-  offerPrice: null,
- },
- {
-  name: "Summer Breeze Tee",
-  image: "https://example.com/images/tshirt10.jpg",
-  price: "690",
-  inventory: "14",
-  rating: "4.2",
   offerPrice: null,
  },
 ];
