@@ -1,26 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
+import "./App.css";
 
 export default function App() {
+ const [formData, setFormData] = useState("");
+
+ const handInputChange = (e) => {
+  setFormData({ ...formData, [e.target.name]: e.target.value });
+ };
+
+ console.log("form", formData);
+
  return (
   <div>
-   <h1>Reducer</h1>
-   <div className="inp">
-    <input type="text" name="name" id="" />
-    <input type="email" name="email" id="" />
-    <input type="number" name="number" id="" />
+   <div className="container">
+    <div className="form-section">
+     <h2>Submit Info</h2>
+     <input
+      onChange={handInputChange}
+      type="text"
+      placeholder="Name"
+      name="name"
+     />
+     <input
+      onChange={handInputChange}
+      type="email"
+      placeholder="Email"
+      name="email"
+     />
+     <input
+      onChange={handInputChange}
+      type="text"
+      placeholder="Task"
+      name="task"
+     />
+     <button type="submit">Submit</button>
+    </div>
+
+    <div className="list-section">
+     <h2>Submissions</h2>
+     <div className="list-item">
+      <div className="info">
+       <strong>John Doe</strong>
+       <br />
+       john@example.com
+      </div>
+      <input type="checkbox" title="Mark as done" />
+      <button>Edit</button>
+      <button>Delete</button>
+     </div>
+    </div>
    </div>
-
-   <button className="btn">Submit</button>
-
-   {/* <ul>
-        {showAllData.map((n) => (
-          <>
-            <li>
-              {n.name}, {n.email}, {n.age}
-            </li>
-          </>
-        ))}
-      </ul> */}
   </div>
  );
 }

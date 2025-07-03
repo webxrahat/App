@@ -1,83 +1,50 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+ font-family: Arial, sans-serif;
+ display: flex;
+ height: 100vh;
+ margin: 0;
+ padding: 20px;
+ box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.container {
+ display: flex;
+ flex: 1;
+ gap: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list-section,
+.form-section {
+ flex: 1;
+ border: 1px solid #ccc;
+ padding: 20px;
+ border-radius: 8px;
+ min-width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.form-section input,
+.form-section textarea,
+.form-section button {
+ display: block;
+ width: 100%;
+ margin-bottom: 15px;
+ padding: 10px;
+ font-size: 1rem;
 }
 
-.card {
-  padding: 2em;
+.list-item {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: 10px;
+ padding: 10px;
+ border-bottom: 1px solid #ddd;
 }
 
-.read-the-docs {
-  color: #888;
+.list-item .info {
+ flex-grow: 1;
 }
 
-.btn{
-  background-color: chocolate;
-  margin-top: 10px;
+.list-item button {
+ margin-left: 5px;
 }
-.inp{
-  display: flex;
-  flex-direction: column;
- 
-  row-gap: 10px;
-}
-
-/* <h1 align="center">
-    <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=Hi+There!+👋;+I'm+Rahat;" />
-</h1>
-
-<h3 align="center">A passionate Full Stack Developer from Bangladesh</h3>
-
-<br/>
-
- 
-<div align="center"> 
-  <a href="mailto:rahat.semicolonit@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-333333?style=for-the-badge&logo=gmail&logoColor=red" />
-  </a>
-  <a href="https://linkedin.com/in/webxrahat" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank" />
-  </a>
-  <a href="https://github.com/webxrahat" target="_blank">
-     <img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white" target="_blank" /> <!-- sqlite, safari, google-chrome are other good icon options -->
-  </a>
-</div>
-
- <hr/>
- 
-<h2 align="center">⚒️ Languages-Frameworks-Tools ⚒️</h2>
-<br/>
-<div align="center">
-    <img src="https://skillicons.dev/icons?i=bootstrap,mui,html,css,sass,vscode,github,figma,tailwind,git,ubuntu,vercel,wordpress,postman" />
-    <img src="https://skillicons.dev/icons?i=js,ts,react,threejs,redux,nextjs,express,nodejs,mongodb,postgres,docker,jest" /><br>
-</div> */
