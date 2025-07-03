@@ -1,49 +1,18 @@
-import { useState } from "react";
-import "./App.css";
+import React from "react";
 
-function App() {
-  const initialValue = { name: "", email: "" };
+export default function App() {
+ return (
+  <div>
+   <h1>Reducer</h1>
+   <div className="inp">
+    <input type="text" name="name" id="" />
+    <input type="email" name="email" id="" />
+    <input type="number" name="number" id="" />
+   </div>
 
-  const [formValue, setFormValue] = useState(initialValue);
-  const [user, setUser] = useState([]);
+   <button className="btn">Submit</button>
 
-  const handleChenge = (e) => {
-    setFormValue((pre) => ({
-      ...pre,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
-  const handleDataSubmit = () => {
-    setUser([...user, formValue]);
-  };
-  console.log(user);
-
-  return (
-    <>
-      <h1>Reducer</h1>
-      <div className="inp">
-        <input
-          type="text"
-          name="name"
-          id=""
-          value={formValue.name}
-          onChange={handleChenge}
-        />
-        <input
-          type="email"
-          name="email"
-          id=""
-          value={formValue.email}
-          onChange={handleChenge}
-        />
-      </div>
-
-      <button onClick={handleDataSubmit} className="btn">
-        Submit
-      </button>
-
-      {/* <ul>
+   {/* <ul>
         {showAllData.map((n) => (
           <>
             <li>
@@ -52,8 +21,6 @@ function App() {
           </>
         ))}
       </ul> */}
-    </>
-  );
+  </div>
+ );
 }
-
-export default App;
