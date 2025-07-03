@@ -1,55 +1,54 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import AddTask from "./AddTask.jsx";
+import TaskList from "./TaskList.jsx";
 import "./App.css";
 
-export default function App() {
- const [formData, setFormData] = useState("");
+let nextId = 3;
+const initialTasks = [
+  { id: 0, text: "Visit Kafka Museum", done: true },
+  { id: 1, text: "Watch a puppet show", done: false },
+  { id: 2, text: "Lennon Wall pic", done: false },
+];
 
- const handInputChange = (e) => {
-  setFormData({ ...formData, [e.target.name]: e.target.value });
- };
+export default function TaskApp() {
+  const [tasks, setTasks] = useState(initialTasks);
 
- console.log("form", formData);
+  function handleAddTask(text) {
+    setTasks([
+      ...tasks,
+      {
+        id: nextId++,
+        text: text,
+        done: false,
+      },
+    ]);
+  }
 
- return (
-  <div>
-   <div className="container">
-    <div className="form-section">
-     <h2>Submit Info</h2>
-     <input
-      onChange={handInputChange}
-      type="text"
-      placeholder="Name"
-      name="name"
-     />
-     <input
-      onChange={handInputChange}
-      type="email"
-      placeholder="Email"
-      name="email"
-     />
-     <input
-      onChange={handInputChange}
-      type="text"
-      placeholder="Task"
-      name="task"
-     />
-     <button type="submit">Submit</button>
-    </div>
+  function handleChangeTask(task) {
+    setTasks(
+      tasks.map((t) => {
+        if (t.id === task.id) {
+          return task;
+        } else {
+          return t;
+        }
+      })
+    );
+  }
 
-    <div className="list-section">
-     <h2>Submissions</h2>
-     <div className="list-item">
-      <div className="info">
-       <strong>John Doe</strong>
-       <br />
-       john@example.com
-      </div>
-      <input type="checkbox" title="Mark as done" />
-      <button>Edit</button>
-      <button>Delete</button>
-     </div>
-    </div>
-   </div>
-  </div>
- );
+  function handleDeleteTask(taskId) {
+    setTasks(tasks.filter((t) => t.id !== taskId));
+  }
+
+  return (
+    <>
+      <h1>Prague itinerary</h1>
+      <AddTask onAddTask={handleAddTask} />
+      <TaskList
+        tasks={tasks}
+        onChangeTask={handleChangeTask}
+        onDeleteTask={handleDeleteTask}
+      />
+    </>
+  );
 }
