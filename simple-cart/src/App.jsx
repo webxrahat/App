@@ -3,14 +3,16 @@ import RootLayout from "./components/RootLayout";
 import Footer from "./components/Footer";
 import "./App.css";
 import { ProductContext } from "./context";
-import { useState } from "react";
+import { useReducer, useState } from "react";
+import { productReducer } from "./createReducer/productReducer";
+import { Products } from "./data/products";
 
 export default function App() {
-  const [cartData, setCartData] = useState([]);
+  const [state, dispatch] = useReducer(productReducer, Products);
 
   return (
     <>
-      <ProductContext.Provider value={{ cartData, setCartData }}>
+      <ProductContext.Provider value={[]}>
         <Header />
         <RootLayout />
         <Footer />
