@@ -1,19 +1,23 @@
 import React, { useState } from "react";
+import AddTask from "./AddTask";
+import TaskList from "./TaskList";
 
 export default function App() {
- const inintialName = [
-  { id: crypto.randomUUID(), taskName: "one task" },
-  { id: crypto.randomUUID(), taskName: "two task" },
-  { id: crypto.randomUUID(), taskName: "Three task" },
+ const inintialTasks = [
+  { id: 0, name: "one task" },
+  { id: 1, name: "two task" },
+  { id: 2, name: "Three task" },
  ];
 
- const [todos, setTodo] = useState(inintialName);
- const [inputValue, setInputValue] = useState("");
- const [edit, setEdit] = useState(false);
+ const [tasks, setTasks] = useState(inintialTasks);
 
- const handleChange = (task) => {
-  setTodo(
-   todos.map((t) => {
+ const handleAddToTask = ({ inputValue }) => {
+  setTasks([...tasks, { name: inputValue }]);
+ };
+
+ const handleChangeTask = (task) => {
+  setTasks(
+   tasks.map((t) => {
     if (t.id === task.id) {
      return task;
     } else {
@@ -23,40 +27,19 @@ export default function App() {
   );
  };
 
- const handleAddTask = () => {
-  setTodo([...todos, { taskName: inputValue }]);
-  setInputValue(" ");
+ const handleDeleteTask = (taskId) => {
+  setTasks(tasks.filter((task) => task.id !== taskId));
+  console.log("task id", taskId);
  };
 
  return (
   <>
-   <div>
-    <input value={inputValue} onChange={handleChange} type="text" />
-    <button onClick={handleAddTask}>Submit</button>
-   </div>
-   <ul>
-    {todos.map((task, idx) => (
-     <li key={idx}>
-      {edit ? (
-       <>
-        {" "}
-        <input
-         value={task.taskName}
-         onChange={(e) => handleChange({ ...task, textName: e.target.value })}
-         type="text"
-        />
-        <button onClick={() => setEdit(false)}>save</button>
-       </>
-      ) : (
-       <>
-        {" "}
-        {task.taskName} <button onClick={() => setEdit(true)}>edit</button>{" "}
-        <button>delete</button>
-       </>
-      )}{" "}
-     </li>
-    ))}
-   </ul>
+   <AddTask onAddTask={handleAddToTask} />
+   <TaskList
+    tasks={tasks}
+    onChangeTask={handleChangeTask}
+    onDeleteTask={handleDeleteTask}
+   />
   </>
  );
 }
