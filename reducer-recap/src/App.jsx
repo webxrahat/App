@@ -3,43 +3,19 @@ import AddTask from "./AddTask";
 import TaskList from "./TaskList";
 
 export default function App() {
- const inintialTasks = [
-  { id: 0, name: "one task" },
-  { id: 1, name: "two task" },
-  { id: 2, name: "Three task" },
+ let nextId = 3;
+ const initialTasks = [
+  { id: 0, text: "Visit Kafka Museum", done: true },
+  { id: 1, text: "Watch a puppet show", done: false },
+  { id: 2, text: "Lennon Wall pic", done: false },
  ];
 
- const [tasks, setTasks] = useState(inintialTasks);
-
- const handleAddToTask = ({ inputValue }) => {
-  setTasks([...tasks, { name: inputValue }]);
- };
-
- const handleChangeTask = (task) => {
-  setTasks(
-   tasks.map((t) => {
-    if (t.id === task.id) {
-     return task;
-    } else {
-     return t;
-    }
-   })
-  );
- };
-
- const handleDeleteTask = (taskId) => {
-  setTasks(tasks.filter((task) => task.id !== taskId));
-  console.log("task id", taskId);
- };
+ const [tasks, setTasks] = useState(initialTasks);
 
  return (
   <>
-   <AddTask onAddTask={handleAddToTask} />
-   <TaskList
-    tasks={tasks}
-    onChangeTask={handleChangeTask}
-    onDeleteTask={handleDeleteTask}
-   />
+   <AddTask />
+   <TaskList tasks={tasks} />
   </>
  );
 }

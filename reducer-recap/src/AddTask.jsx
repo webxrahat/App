@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 
-export default function AddTask({ onAddTask }) {
- const [inputValue, setInputValue] = useState("");
+export default function AddTask() {
+ const [text, setText] = useState("");
  return (
   <div>
    <input
     type="text"
     placeholder="Enter task"
-    onChange={(e) => setInputValue(e.target.value)}
+    value={text}
+    onChange={(e) => setText(e.target.value)}
    />
-   <button onClick={() => onAddTask({ inputValue, setInputValue })}>
-    Sumbit
-   </button>
+   <button>Sumbit</button>
   </div>
  );
 }
