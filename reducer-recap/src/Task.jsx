@@ -5,7 +5,7 @@ export default function Task({ task, onChange, onDelete }) {
  let textContent;
 
  if (isEditing) {
-  taskContent = (
+  textContent = (
    <>
     <input
      value={task.text}
@@ -20,7 +20,7 @@ export default function Task({ task, onChange, onDelete }) {
    </>
   );
  } else {
-  taskContent = (
+  textContent = (
    <>
     {task.text}
     <button onClick={() => setIsEditing(true)}>Edit</button>
