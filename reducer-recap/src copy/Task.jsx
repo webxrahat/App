@@ -28,6 +28,8 @@ export default function Task({ task, onChange, onDelete }) {
   );
  }
 
+ console.log(task.id);
+
  return (
   <>
    <span>{textContent} </span>
