@@ -8,15 +8,15 @@ import { productReducer } from "./createReducer/productReducer";
 import { Products } from "./data/products";
 
 export default function App() {
-  const [state, dispatch] = useReducer(productReducer, Products);
+ const [state, dispatch] = useReducer(productReducer, Products);
 
-  return (
-    <>
-      <ProductContext.Provider value={[]}>
-        <Header />
-        <RootLayout />
-        <Footer />
-      </ProductContext.Provider>
-    </>
-  );
+ return (
+  <>
+   <ProductContext.Provider value={{ state, dispatch }}>
+    <Header />
+    <RootLayout />
+    <Footer />
+   </ProductContext.Provider>
+  </>
+ );
 }

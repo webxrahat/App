@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import CategoryFilter from "./CategoryFilter";
 import ProductsCard from "./ProductsCard";
 import Cart from "./Cart";
+import { ProductContext } from "../context";
 
 export default function RootLayout() {
  return (
