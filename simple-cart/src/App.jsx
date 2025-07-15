@@ -5,14 +5,14 @@ import "./App.css";
 import { ProductContext } from "./context";
 import { useReducer, useState } from "react";
 import { productReducer } from "./createReducer/productReducer";
-import { Products } from "./data/products";
+import { products } from "./data/products";
 
 export default function App() {
- const [state, dispatch] = useReducer(productReducer, Products);
+ const [productList, dispatch] = useReducer(productReducer, products);
 
  return (
   <>
-   <ProductContext.Provider value={{ state, dispatch }}>
+   <ProductContext.Provider value={{ productList, dispatch }}>
     <Header />
     <RootLayout />
     <Footer />
