@@ -10,7 +10,6 @@ export default function Favorite() {
     <img src="/heart.svg" alt="" />
     <span>Favourite Locations</span>
    </div>
-   ;
   </>
  );
 }

@@ -5,7 +5,7 @@ import WeatherCondition from "./WeatherCondition";
 
 export default function WeatherBoard() {
  return (
-  <main className="grid place-items-center mx-auto h-screen">
+  <main>
    {" "}
    <section className="">
     <div className="container">
