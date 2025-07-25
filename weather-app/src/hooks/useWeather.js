@@ -76,7 +76,7 @@ export default function useWeather() {
   });
 
   navigator.geolocation.getCurrentPosition((position) =>
-   fetchData(position.coords.latitude, position.coords.latitude)
+   fetchData(position.coords.latitude, position.coords.longitude)
   );
  }, []);
 
